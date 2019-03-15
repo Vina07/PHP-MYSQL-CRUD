@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Responsive jQuery BootStrap Form jQuery Validation</title>
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style>
+</head>
+<body>
+<div style="width:90%; margin:auto; text-align:justify;">
+  <div>
+    <p><strong>Responsive HTML Form Full Functional with PHP Possessing Script and jQuery Validation. Added Google No Captcha Security Are You Human Field ( You will have to get a public and private reCaptcha Key for the domain your are going to use the form on for No Captcha to work here <a href="https://www.google.com/recaptcha/admin" target="_blank">https://www.google.com/recaptcha/admin</a></strong></p>
+    <p><strong>Be careful not to overwrite your already existing home page with this index page when uploading the forms, folders and scripts. </strong></p>
+    <p><em>You can rename the folder and upload it as a demo to fully test everthing before you add it to your website you will need to give the path to that folder in the config.php. </em></p>
+    <p>This is a custom Bootstrap Gyphicon jQuery Validation form. Is has a php registration scrip and format with email verification links sent out, login form, lost passwords rest form, rest password via email link and take the to rest password form. It will redirect from the members page to login or register.</p>
+    <p>Add Login and Join links to your home page as demonstrated on the index.php and all pages must be .php for the php scripts to work with the database you need to see up and all to the config.php in the includes folder. </p>
+    <p>PHP database script found free online for use and tested. You can see my demo page to fully test the working demo and can go through the whole process if you enter your genuine email. </p>
+    <p>For formatted code open in html editor or notepad. </p>
+    <p>Suitable for all major computer browsers and  mobile phones. Test by shrinking of the width you would view on a mobile phone, just shrink your browser to mobile phone size on a computer., To test jQuery validation just submit without filling out any fields.</p>
+    <p>Simple to make one or two changes to the php processing script upload all folders with files into the same directory as you form pages and bingo.</p>
+    <p><strong>Instructions</strong></p>
+    <p>The forms are set up you can make changes to the validation if wished. The php script are not my own but free to use, I have tested them fully.</p>
+    <p>Changes to captcha need to be made on index, login, reset and restPassword </p>
+    <p>There is also one change you need to make in the forms. You need to enter your public google reCaptcha site key    </p>
+    <p>&lt;div class=&quot;g-recaptcha&quot; data-sitekey=&quot;<span class="style1" style="width:90%; margin:auto;">Enter Your Public Site Key Here</span>&quot; style=&quot;transform:scale(0.90);-webkit-transform:scale(0.90);transform-origin:0 0;-webkit-transform-origin:0 0; color:transparent; font-weight:normal; line-height:0px;&quot; tabindex=&quot;6&quot;&gt; &lt;/div&gt;</p>
+    <p>The first thing you need to do it create a database - database name, username and password. If you database have a prefix in the prefix_name &amp; prefix_username you most likely will need to add them in the php script. Open the includes folded and open config.php in a html editor or notepad, don't forget to save changes and make sure they are still .php files after you save then.</p>
+    <p>This is the way I would set up the database as it need the table for your users. There are other methods if this fails. Go to cPanel or you content manager and set up your database, make a note of all names and password for to php config.php file. Then got to go to your phpMyAdmin, click the plus to see all database then click on the one your just created for this, now click on Import, click Browse and navigate to this folder you download and you will see the db.sql add then click GO near the bottom, this I found shows a error but it does not matter it will work fine still. To see the table you just created, click on Structure then just below you will see structure again click on that and you should see the installed table, to the left you should also see prefix_dblogin, click the cross and click on members, this will also take you to the table, if you do not see it, close and re-open phpMyAdmin and you should see it. As new member register you will see them here, click the red delete cross will remove them from the database if need and helpful for testing. </p>
+    <p>Here are the changes you need to make at the top of the script, you don't need to use a active email, it is the address the with see and could try to reply to so a norply@ that bounces or create it to auto reply or use another genuine email, you will not receive any email from this script. Don't forget to change //applicable address... to your director that the forms are in and a email address. </p>
+    <p>//set timezone<br />
+    date_default_timezone_set('<span class="style1">Europe/London</span>'); // You can change this to you time zone</p>
+    <p>//database credentials<br />
+      define('DBHOST','localhost');        // This should work if not try ip website address or define path to your database<br />
+      define('DBUSER','<span class="style1">prefix_username</span>'); // Database username most often with the database prefix_username if not try username<br />
+      define('DBPASS','<span class="style1">password</span>');        // Database Password<br />
+      define('DBNAME','<span class="style1">prefix_databasename</span>');   // Database name most often with the database prefix_databasename if not try databasename</p>
+    <p>//application address<br />
+      define('DIR','<span class="style1">http://www.domain.com/</span>'); //Path the the directory where the forms are stored i.e. http://www.domain.com or http://www.domain.com/subfolder/<br />
+      define('SITEEMAIL','<span class="style1">noreply@domain.com</span>'); // Registered users will receive an email from this address i.e. admin@yourdomain.com</p>
+    <p>The memberspage can only be viewed by loged in members, you can create other loged in pages, you will need to add the following to each new php page, you can style the page and logout link as you wish.</p>
+    <p class="style1">&lt;?php require('includes/config.php'); </p>
+    <p class="style1">//if not logged in redirect to login page<br />
+  if(!$user-&gt;is_logged_in()){ header('Location: login.php'); } </p>
+    <p class="style1">//define page title<br />
+      $title = 'Members Page';</p>
+    <p class="style1">//include header template<br />
+      require('layout/header.php'); <br />
+      ?&gt;</p>
+    <p>&lt;div class=&quot;container&quot;&gt;</p>
+    <p> &lt;div class=&quot;row&quot;&gt;</p>
+    <p> &lt;div class=&quot;col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3&quot;&gt;<br />
+        &lt;!-- Add your own own styling --&gt; <br />
+       &lt;div&gt;Member only page - Welcome<span class="style1"> &lt;?php echo $_SESSION['username']; ?&gt;</span>&lt;/div&gt;<br />
+&lt;p&gt;<span class="style1">&lt;a href='logout.php'&gt;Logout&lt;/a&gt;</span>&lt;/p&gt;<br />
+  &lt;hr&gt;</p>
+    <p> &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+    </p>
+    <p>&lt;/div&gt;</p>
+    <p class="style1">&lt;?php <br />
+      //include header template<br />
+      require('layout/footer.php'); <br />
+      ?&gt;</p>
+    <p>&nbsp; </p>
+    <p>&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>
